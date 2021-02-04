@@ -17,7 +17,9 @@ const TabsDemo = lazy(() => import('../pages/TabsDemo'))
 const MyAccount = lazy(() => import('../pages/MyAccount/MyAccount'))
 
 // Hiking
-const SignUp = lazy(() => import('../pages/Hiking/SignUp/Register0-form'))
+// const SignUp = lazy(() => import('../pages/Hiking/SignUp/Register0-form'))
+const SignUp = lazy(() => import('../pages/Hiking/SignUp/SignUp'))
+
 
 const routes = [
   <UnauthorizedRoute path="/signin" redirectTo="/" exact component={SignIn} />,
