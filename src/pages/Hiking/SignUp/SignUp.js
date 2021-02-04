@@ -80,7 +80,7 @@ const useStyles = makeStyles({
     color: '#979797',
   },
   privacyInfo: {
-    width: '379px',
+    width: '-webkit-fill-available',
     height: '45px',
     margin: '16px 0px 0px',
     fontFamily: 'NotoSansCJKtc',
@@ -93,7 +93,7 @@ const useStyles = makeStyles({
     color: '#232323',
   },
   submit: {
-    width: '343px',
+    width: '-webkit-fill-available',
     height: '48px',
     margin: '40px 0px 0px 0px',
     backgroundColor: '#00d04c',
@@ -140,7 +140,7 @@ const SignUp = () => {
           <div className={classes.passwordInfo}>密碼必須包含8個字元以上</div>
           <label className={classes.label}>確認密碼</label><br />
           <Input placeholder="請重新輸入密碼" fullWidth />
-          <div className={classes.privacyInfo}>使用這個應用程式前，請先詳閱「Go Hiking」的<br />
+          <div className={classes.privacyInfo}>使用這個應用程式前，請先詳閱「Go Hiking」的
           《<span style={{ color: '#007aff' }}>隱私權政策</span>》及《<span style={{ color: '#007aff' }}>服務條款</span>》
         </div>
           
