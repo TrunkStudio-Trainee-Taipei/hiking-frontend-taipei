@@ -14,6 +14,7 @@ import { useMenu } from 'material-ui-shell/lib/providers/Menu'
 import { useForm } from 'react-hook-form';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
+import { InputLabel } from '@material-ui/core'
 const useStyles = makeStyles({
   container: {
     display: 'flex',
@@ -43,7 +44,6 @@ const useStyles = makeStyles({
   label: {
     width: '66px',
     height: '24px',
-    margin: '0px 0px 31px 0px',
     fontFamily: 'NotoSansCJKtc',
     fontSize: '16px',
     fontWeight: '500',
@@ -126,19 +126,23 @@ const SignUp = () => {
     }
   }
 
+  function BackButton() {
+    history.push("/");
+  }
+
   return (
     <Page>
       <div className={classes.container}>
-        <ArrowBackIcon className={classes.arrow} />
+        <ArrowBackIcon className={classes.arrow} onClick={BackButton} />
         <div className={classes.title}>註冊帳號</div>
         <form className={classes.form} onSubmit={handleSubmit} noValidate>
-          <label className={classes.label}>電子信箱</label>
+          <InputLabel className={classes.label}>電子信箱</InputLabel>
           <Input placeholder="請輸入電子信箱" fullWidth />
           <div className={classes.errorInfo}>錯誤資訊</div>
-          <label className={classes.label}>密碼</label><br />
+          <InputLabel className={classes.label}>密碼</InputLabel>
           <Input placeholder="請輸入密碼" fullWidth />
           <div className={classes.passwordInfo}>密碼必須包含8個字元以上</div>
-          <label className={classes.label}>確認密碼</label><br />
+          <InputLabel className={classes.label}>確認密碼</InputLabel>
           <Input placeholder="請重新輸入密碼" fullWidth />
           <div className={classes.privacyInfo}>使用這個應用程式前，請先詳閱「Go Hiking」的
           《<span style={{ color: '#007aff' }}>隱私權政策</span>》及《<span style={{ color: '#007aff' }}>服務條款</span>》
