@@ -15,6 +15,8 @@ import { useForm } from 'react-hook-form';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 import { InputLabel } from '@material-ui/core'
+import { apiUserRegister } from "../components/api/api.js";
+
 const useStyles = makeStyles({
   container: {
     display: 'flex',
@@ -130,29 +132,42 @@ const SignUp = () => {
     history.push("/");
   }
 
+  const onSubmit = data => {
+    console.log(data);
+
+    apiUserRegister(data)
+    .then(res=> {
+      console.log(res.data);
+      exports = res.data;
+    })
+    .catch(err=> {
+      console.log(err);
+    })
+
+  }
+
   return (
     <Page>
       <div className={classes.container}>
         <ArrowBackIcon className={classes.arrow} onClick={BackButton} />
         <div className={classes.title}>註冊帳號</div>
-        <form className={classes.form} onSubmit={handleSubmit} noValidate>
+        <form className={classes.form} onSubmit={handleSubmit(onSubmit)} noValidate>
           <InputLabel className={classes.label}>電子信箱</InputLabel>
-          <Input placeholder="請輸入電子信箱" fullWidth />
+          <Input name="email" placeholder="請輸入電子信箱" fullWidth inputRef={register} />
           <div className={classes.errorInfo}>錯誤資訊</div>
           <InputLabel className={classes.label}>密碼</InputLabel>
-          <Input placeholder="請輸入密碼" fullWidth />
+          <Input name="password" placeholder="請輸入密碼" fullWidth inputRef={register} />
           <div className={classes.passwordInfo}>密碼必須包含8個字元以上</div>
           <InputLabel className={classes.label}>確認密碼</InputLabel>
           <Input placeholder="請重新輸入密碼" fullWidth />
           <div className={classes.privacyInfo}>使用這個應用程式前，請先詳閱「Go Hiking」的
           《<span style={{ color: '#007aff' }}>隱私權政策</span>》及《<span style={{ color: '#007aff' }}>服務條款</span>》
-        </div>
+          </div>
           
           <Button
             type="submit"
             fullWidth
             variant="contained"
-            
             className={classes.submit}
           >
             同意並註冊
