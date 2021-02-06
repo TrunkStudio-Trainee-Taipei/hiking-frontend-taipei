@@ -5,7 +5,7 @@ import UnauthorizedRoute from 'base-shell/lib/components/UnauthorizedRoute/Unaut
 import { Route } from 'react-router-dom'
 
 const SignIn = lazy(() => import('../pages/SignIn/SignIn'))
-const SignUp = lazy(() => import('../pages/SignUp/SignUp'))
+// const SignUp = lazy(() => import('../pages/SignUp/SignUp'))
 const PasswordReset = lazy(() => import('../pages/PasswordReset/PasswordReset'))
 const About = lazy(() => import('../pages/About'))
 const Home = lazy(() => import('../pages/Home/Home'))
@@ -15,6 +15,11 @@ const FilterDemo = lazy(() => import('../pages/FilterDemo'))
 const ListPageDemo = lazy(() => import('../pages/ListPageDemo'))
 const TabsDemo = lazy(() => import('../pages/TabsDemo'))
 const MyAccount = lazy(() => import('../pages/MyAccount/MyAccount'))
+
+// Hiking
+// const SignUp = lazy(() => import('../pages/Hiking/SignUp/Register0-form'))
+const SignUp = lazy(() => import('../pages/Hiking/SignUp/SignUp'))
+
 
 const routes = [
   <UnauthorizedRoute path="/signin" redirectTo="/" exact component={SignIn} />,
