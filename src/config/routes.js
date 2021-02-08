@@ -15,6 +15,8 @@ const FilterDemo = lazy(() => import('../pages/FilterDemo'))
 const ListPageDemo = lazy(() => import('../pages/ListPageDemo'))
 const TabsDemo = lazy(() => import('../pages/TabsDemo'))
 const MyAccount = lazy(() => import('../pages/MyAccount/MyAccount'))
+const Login1_1 = lazy(() => import('../pages/HikingFrontend/Login1_1'))
+const Register0_1 = lazy(() => import('../pages/HikingFrontend/Register0_1'))
 
 // Hiking
 // const SignUp = lazy(() => import('../pages/Hiking/SignUp/Register0-form'))
@@ -24,6 +26,8 @@ const SignUp = lazy(() => import('../pages/Hiking/SignUp/SignUp'))
 const routes = [
   <UnauthorizedRoute path="/signin" redirectTo="/" exact component={SignIn} />,
   <UnauthorizedRoute path="/signup" redirectTo="/" exact component={SignUp} />,
+  <UnauthorizedRoute path="/Login1_1" redirectTo="/" exact component={Login1_1} />,
+  <UnauthorizedRoute path="/Register0_1" redirectTo="/" exact component={Register0_1} />,
   <UnauthorizedRoute
     path="/password_reset"
     redirectTo="/"
